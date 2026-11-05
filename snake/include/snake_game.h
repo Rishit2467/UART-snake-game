@@ -4,22 +4,22 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define GRID_COLS   16
-#define GRID_ROWS    2
-#define MAX_SNAKE   32
+#define GRID_COLS 16
+#define GRID_ROWS 2
+#define MAX_SNAKE 32
 
 typedef enum {
-    DIR_UP    = 0,
-    DIR_DOWN  = 1,
-    DIR_LEFT  = 2,
-    DIR_RIGHT = 3
+    DIR_UP = 0,
+    DIR_DOWN,
+    DIR_LEFT,
+    DIR_RIGHT
 } Direction_t;
 
 typedef enum {
-    STATE_IDLE      = 0,
-    STATE_PLAYING   = 1,
-    STATE_PAUSED    = 2,
-    STATE_GAME_OVER = 3
+    STATE_IDLE = 0,
+    STATE_PLAYING,
+    STATE_PAUSED,
+    STATE_GAME_OVER
 } GameState_t;
 
 typedef struct {
@@ -37,15 +37,17 @@ typedef struct {
     bool        moved_this_tick;
 } SnakeGame_t;
 
-void     Snake_Init(void);
-void     Snake_Tick(void);
-void     Snake_SetDirection(Direction_t dir);
-void     Snake_Pause(void);
-void     Snake_Resume(void);
-void     Snake_Reset(void);
+void        Snake_Init(void);
+void        Snake_Reset(void);
+void        Snake_Tick(void);
+void        Snake_SetDirection(Direction_t dir);
+void        Snake_Pause(void);
+void        Snake_Resume(void);
 GameState_t Snake_GetState(void);
-uint16_t Snake_GetScore(void);
-uint8_t  Snake_GetLength(void);
+uint16_t    Snake_GetScore(void);
+uint8_t     Snake_GetLength(void);
 Direction_t Snake_GetDir(void);
+Point_t    *Snake_GetBody(void);
+Point_t     Snake_GetFood(void);
 
-#endif
+#endif /* SNAKE_GAME_H */
