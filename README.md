@@ -4,6 +4,9 @@ A fully-featured, hardware-driven Snake game built for the **STM32 Nucleo-F103RB
 
 It features a non-blocking architecture using hardware timers, ADC polling, and interrupt-driven UART for real-time PC terminal control and telemetry.
 
+https://github.com/user-attachments/assets/56b43988-aebe-4365-a46a-98e32cc7fbf1
+
+
 ## ✨ Features
 * **Custom LCD Graphics:** Uses CGRAM custom characters for the snake's head, body, and food.
 * **Non-Blocking Architecture:** Game ticks are driven by a `TIM2` hardware timer interrupt (no `HAL_Delay()` freezing).
